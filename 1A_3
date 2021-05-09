@@ -3,7 +3,6 @@
 #include <stdlib.h>
 int swap1(int, int);
 int swap2(int, int);
-int swap3(int, int);
 int main()
 {
     int a, b;
@@ -14,7 +13,7 @@ int main()
     printf("Before swap: a=%d, b=%d\n", a, b);
     a=swap1(a, b);
     b=swap2(a, b);
-    a=swap3(a, b);
+    a=swap2(a, b);
     printf("After swap: a=%d, b=%d", a, b);
 }
 int swap1(int a, int b)
@@ -22,10 +21,6 @@ int swap1(int a, int b)
     return(a+b);
 }
 int swap2(int a, int b)
-{
-    return(a-b);
-}
-int swap3(int a, int b)
 {
     return(a-b);
 }
