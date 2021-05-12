@@ -1,0 +1,17 @@
+// Write a program in C to find the sum of the series 1!/1+2!/2+3!/3+4!/4+5!/5 using the function.
+#include <stdio.h>
+#include <stdlib.h>
+int fsum(int);
+int main()
+{
+    int sum=0;
+    sum+=fsum(1)/1+fsum(2)/2+fsum(3)/3+fsum(4)/4+fsum(5)/5;
+    printf("%d", sum);
+}
+int fsum(int number)
+{
+    int product=1;
+    for(; number>0; number--)
+        product*=number;
+    return(product);
+}
