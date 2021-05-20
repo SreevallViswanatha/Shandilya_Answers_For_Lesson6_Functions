@@ -11,11 +11,10 @@ int main()
 }
 long binary(int decimal)
 {
-    long binaryn=0, remainder, place=1;
+    int binaryn=0, place=1;
     for(; decimal>0; decimal/=2)
     {
-        remainder=decimal%2;
-        binaryn+=remainder*place;
+        binaryn+=(decimal%2)*place;
         place*=10;
     }
     return binaryn;
