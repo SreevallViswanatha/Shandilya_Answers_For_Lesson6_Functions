@@ -1,0 +1,24 @@
+// Write a program in C to convert decimal number to binary number using the function. 
+#include<stdio.h>
+#include<stdlib.h>
+long binary(int);
+int main()
+{
+    long binaryn;
+    int decimal;
+    printf("Enter a number:");
+    scanf("%d", &decimal);
+    binaryn=binary(decimal);
+    printf("The binary value of %d is:%ld", decimal, binaryn);
+}
+long binary(int decimal)
+{
+    long binary=0,remainder, place=1;
+    for(; decimal>0; decimal/=2)
+    {
+        remainder=decimal%2;
+        binary+=remainder*place;
+        place*=10;
+    }
+    return binary;
+}
