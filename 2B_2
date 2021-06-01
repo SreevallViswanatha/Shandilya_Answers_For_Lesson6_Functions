@@ -1,0 +1,32 @@
+// Write a program in C to print all perfect numbers in given range using the function.
+#include <stdio.h>
+#include <stdlib.h>
+int perfect(int);
+int main()
+{
+    int start, end, check;
+    printf("Enter the start limit:");
+    scanf("%d", &start);
+    printf("Enter the end limit:");
+    scanf("%d", &end);
+    printf("The perfect numbers from %d to %d are:", start, end);
+    for(; start<=end; start++)
+    {
+        check=perfect(start);
+        if(check)
+            printf("%d ", start);
+    }
+}
+int perfect(int start)
+{
+    int factor=1, sum=0;
+    for(; factor<start; factor++)
+    {
+        if(start%factor==0)
+            sum+=factor;
+    }
+    if(sum==start)
+        return 1;
+    else
+        return 0;
+}
