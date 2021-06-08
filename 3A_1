@@ -1,0 +1,49 @@
+// Write a program in C to check whether two given strings are an anagram.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int check_string(char[500], char[500]);
+int main()
+{
+    char string1[500], string2[500], check;
+    printf("Enter the first string:");
+    scanf("%s", string1);
+    printf("Enter the second string:");
+    scanf("%s", string2);
+    printf("%s and %s are ", string1, string2);
+    check=check_string(string1, string2);
+    if(check)
+        printf("anagrams.");
+    else
+        printf("not anagrams");
+}
+int check_string(char string1[500], char string2[500])
+{
+    int length1, length2, error;
+    char c;
+    length1=strlen(string1)-1;
+    length2=strlen(string2)-1;
+    for(; length1>=0; length1--)
+    {
+        c=string1[length1];
+        length2=strlen(string2);
+        for(; length2>=0; length2--)
+        {
+            error=1;
+            if(c==string2[length2])
+            {
+                error=0;
+                break;
+            }
+        }
+        if(error)
+        {
+            return 0;
+            break;
+        }
+        memmove(&string2[length2], &string2[length2+1], strlen(string2)-length2);
+        c=fflush(stdin);
+    }
+    if(error==0)
+        return 1;
+}
