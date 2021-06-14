@@ -1,0 +1,30 @@
+// Write a C programming to find out maximum and minimum of some values using function which will return an array.
+#include <stdio.h>
+#include <stdlib.h>
+void smallest_largest(int);
+int main()
+{
+    int n;
+    printf("How many values do you want to input? ");
+    scanf("%d", &n);
+    smallest_largest(n);
+}
+void smallest_largest(int n)
+{
+    int smallest, largest, n1;
+    printf("Enter a number:");
+    scanf("%d", &smallest);
+    largest=smallest;
+    n--;
+    for(; n>0; n--)
+    {
+        printf("Enter a number:");
+        scanf("%d", &n1);
+        if(n1>largest)
+            largest=n1;
+        else if(n1<smallest)
+            smallest=n1;
+    }
+    printf("The largest number is:%d\n", largest);
+    printf("The smallest number is:%d", smallest);
+}
