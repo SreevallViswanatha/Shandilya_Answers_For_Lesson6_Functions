@@ -1,0 +1,36 @@
+// Create a function that takes two numbers and returns the GCF of the two numbers.
+#include <stdio.h>
+#include <stdlib.h>
+int calGCF(int, int);
+int main()
+{
+    int a, b;
+    printf("Enter a number:");
+    scanf("%d", &a);
+    printf("Enter another number:");
+    scanf("%d", &b);
+    printf("The GCF of %d and %d is:%d", a, b, calGCF(a, b));
+}
+int calGCF(int a, int b)
+{
+    int GCF;
+    if(a<b)
+    {
+        for(GCF=a; GCF>0; GCF--)
+        {
+            if((a%GCF==0)&&(b%GCF==0))
+                break;
+        }
+    }
+    else if(a>b)
+    {
+        for(GCF=b; GCF>0; GCF--)
+        {
+            if((a%GCF==0)&&(b%GCF==0))
+                break;
+        }
+    }
+    else
+        GCF=a;
+    return GCF;
+}
