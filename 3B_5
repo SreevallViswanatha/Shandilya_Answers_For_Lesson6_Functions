@@ -1,0 +1,24 @@
+// Create a function that takes 10 integers and returns the highest number in that array.
+#include <stdio.h>
+#include <stdlib.h>
+int largest(int []);
+int main()
+{
+    int a[10], i;
+    for(i=0; i<=9; i++)
+    {
+        printf("Enter a number:");
+        scanf("%d", &a[i]);
+    }
+    printf("The largest number is:%d", largest(a));
+}
+int largest(int a[10])
+{
+    int i, largest=0;
+    for(i=0; i<=9; i++)
+    {
+        if(a[i]>largest)
+            largest=a[i];
+    }
+    return largest;
+}
