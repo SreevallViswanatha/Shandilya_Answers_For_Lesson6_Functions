@@ -1,0 +1,26 @@
+// Create a function that takes a string and a character and returns the number of times that character appears in the string.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int strchar(char [], char);
+int main()
+{
+    char str[1000], c;
+    printf("Enter the string:");
+    scanf("%s", str);
+    c=fflush(stdin);
+    printf("Enter the character:");
+    scanf("%c", &c);
+    printf("%d", strchar(str, c));
+}
+int strchar(char str[1000], char c)
+{
+    int length, number=0;
+    length=strlen(str)-1;
+    for(; length>=0; length--)
+    {
+        if(c==str[length])
+            number++;
+    }
+    return number;
+}
